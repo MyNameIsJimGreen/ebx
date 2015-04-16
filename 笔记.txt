@@ -1,4 +1,4 @@
-1、
+﻿1、
 
 字体的属性如下：
 font-style:italic;
@@ -105,3 +105,10 @@ js中对象字面量的写法有两种：
       islider_button.js： 支持在图片上添加页码标示，支持点击翻页. 以左右图标展示demo地址
       islider_animate.js： islider滑动效果库，目前支持flip、depth、flow等翻页效果. demo地址
       islider_zoom.js： 针对type为pic类型的滑动元素提供的手势缩放功能，支持android和ios中手势缩放功能，同时支持边缘检测demo地址
+
+
+   5.
+     http://segmentfault.com/a/1190000000683599
+    
+     Size/Content: Size是响应头部和响应体结合起来的大小，Content是请求内容解码后的大小。进一步了解可以看这里Chrome Dev Tools - “Size” vs “Content”；
+     Time/Latency: Time是从请求开始到接收到最后一个字节的总时长，Latency是从请求开始到接收到第一个字节的时间；
