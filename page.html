@@ -138,39 +138,48 @@ body {
 </style>
 </head>
 <body>
-		<div id="iSlider-wrapper"></div>
-		<aside class="media-wrap">
-			<span id="musicBtnTxt" style="display: none;">关闭</span>
-			<i id="musicBtn" class="music-btn on"></i>
-		</aside>
-		<div id="iSlider-arrow"></div>
-	    <a href="xi.html" target="_self" id="back"></a>
+<div id="iSlider-wrapper"></div>
+<aside class="media-wrap">
+<span id="musicBtnTxt" style="display: none;">关闭</span>
+<i id="musicBtn" class="music-btn on"></i>
+</aside>
+<div id="iSlider-arrow"></div>
+<a href="xi.html" target="_self" id="back"></a>
 <script src="js/islider.js"></script>
 <script>
-		var list = [
-			{content: "images/1.jpg"},
-			{content: "images/2.jpg"},
-			{content: "images/3.jpg"}];
-		
-		var	islider = new iSlider({
-			type: 'pic',
-		    data: list,
-		    dom: document.getElementById("iSlider-wrapper"),
-		    isVertical: true,
-		    isLooping: true,
-		    animateType: 'card',
-		    onslidechange: function(idx) {
+var list = [
+{content: "images/1.jpg"},
+{content: "images/2.jpg"},
+{content: "images/3.jpg"}];
 
-		    	if (this.isLooping === false) {
-			    	if (idx === this.data.length - 1) {
-			    		document.getElementById('iSlider-arrow').style.display = 'none';
-			    	}
-			    	else {
-			    		document.getElementById('iSlider-arrow').style.display = 'block';
-			    	}
-			    }
-		    }
-		});
-	</script>
+var	islider = new iSlider({
+type: 'pic',
+data: list,
+dom: document.getElementById("iSlider-wrapper"),
+isVertical: true,
+isLooping: true,
+animateType: 'card',
+onslidechange: function(idx) {
+
+	if (this.isLooping === false) {
+    	if (idx === this.data.length - 1) {
+    		document.getElementById('iSlider-arrow').style.display = 'none';
+    	}
+    	else {
+    		document.getElementById('iSlider-arrow').style.display = 'block';
+    	}
+    }
+}
+});
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?c47a84206681693e534ee69cbd180f19";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </body>
 </html>
