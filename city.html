@@ -106,12 +106,16 @@ $(function(){
    tclick(".totop",function(){
         myScroll.scrollTo(0, 0,1000,IScroll.utils.ease.elastic)
    })
+   tap(".city-list span",function(){
+    localStorage.setItem("city",$(this).html());
+    var locationStr = location.toString();
+    location = location.toString().substring(0,location.toString().lastIndexOf("/"))+"/index.html";
+   }) 
    tclick(".city-list span",function(){
     localStorage.setItem("city",$(this).html());
     var locationStr = location.toString();
     location = location.toString().substring(0,location.toString().lastIndexOf("/"))+"/index.html";
    }) 
-
 })
 /*iscroll的固定写法 end*/
 </script>
