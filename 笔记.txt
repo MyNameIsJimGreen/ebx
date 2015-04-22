@@ -112,3 +112,14 @@ js中对象字面量的写法有两种：
     
      Size/Content: Size是响应头部和响应体结合起来的大小，Content是请求内容解码后的大小。进一步了解可以看这里Chrome Dev Tools - “Size” vs “Content”；
      Time/Latency: Time是从请求开始到接收到最后一个字节的总时长，Latency是从请求开始到接收到第一个字节的时间；
+
+
+   6. chrome timeline问题
+
+    Stalled是浏览器得到要发出这个请求的指令，到请求可以发出的等待时间，一般是代理协商、以及等待可复用的TCP连接释放的时间，不包括DNS查询、建立TCP连接等时间等
+   
+    Request sent 请求第一个字节发出前到最后一个字节发出后的时间，也就是上传时间
+   
+    Waiting 请求发出后，到收到响应的第一个字节所花费的时间(Time To First Byte)
+   
+    Content Download 收到响应的第一个字节，到接受完最后一个字节的时间，就是下载时间
