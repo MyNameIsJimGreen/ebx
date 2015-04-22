@@ -38,7 +38,7 @@
 }
 .city-name {
   padding: 10px;
-  font: bold 0.85em/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
+  font: bold 0.85rem/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
   color: #08c;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
@@ -63,7 +63,7 @@
   display: flex;
 
   padding: 10px;
-  font: bold 1.25em/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
+  font: bold 1.25rem/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
 }
 h4 {
   display: block;
@@ -79,7 +79,7 @@ h4 {
   padding: 10px;
   border-bottom: 1px solid #eee;
   /* 0.75/1 的含义是：字体大小为0.75em，行高为一倍，即也为0.75em*/
-  font: normal 0.75em/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
+  font: normal 0.75rem/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
   color: #666;
 }
 .city-note {
@@ -88,7 +88,7 @@ h4 {
   font-size: 12px;
 }
 .city-name span{
-	font: bold 0.85em/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
+	font: bold 0.85rem/1 "Helvetica Neue","Microsoft Yahei",sans-serif;
 	color: #08c;
 }
 .city-list{
