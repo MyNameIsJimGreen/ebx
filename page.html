@@ -120,31 +120,41 @@ body {
     	opacity: 0;
   	}
 }
-#back{
-	position: absolute;
-	display: block;
-	width: 3em;
-	height: 3em;
-	left: 0;
-	right: 70%;
-	bottom: 5%;
-	margin: 0 auto;
-	border-top: 2px solid #fff;
-	border-right: 2px solid #fff;
-	z-index: 10000;
-	opacity: 0.8;
-	-webkit-transform:rotate(-135deg);
+.city{
+  position:absolute;
+  left: 10px;
+  top: -30px;
+  cursor: pointer;
+}
+.city a {
+  color: #eee;
+  text-decoration: none;
+}
+header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  padding: 0;
+  color: #eee;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color:#fff;
+  background: #6633CC;
 }
 </style>
 </head>
 <body>
+<header style="position:relative;"><div class="city"><a target="_self" href="xi.html"><h6>< 返回</h6></a></div>洗鞋服务说明</header>
 <div id="iSlider-wrapper"></div>
 <aside class="media-wrap">
 <span id="musicBtnTxt" style="display: none;">关闭</span>
 <i id="musicBtn" class="music-btn on"></i>
 </aside>
 <div id="iSlider-arrow"></div>
-<a href="xi.html" target="_self" id="back"></a>
 <script src="js/islider.js"></script>
 <script>
 var list = [

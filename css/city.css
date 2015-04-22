@@ -8,13 +8,6 @@
 .city a {
 	color: #eee;
 }
-.down{
-	height: 6px;
-	width: 12px;
-	margin-left: 5px;
-	display: inline-block;
-	background: url("../images/down.png") center no-repeat;
-}
 /*城市选择区*/
 .city-item{
    margin-top: 10px;
