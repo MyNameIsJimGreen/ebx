@@ -98,6 +98,12 @@
 	display: block;
 	background: url('../images/myorder.png') center center no-repeat;
 }
+.H-place4{
+	width: .36rem;
+	height: .36rem;
+	display: block;
+	background: url('../images/myqian.png') center center no-repeat;
+}
 .H-submit{
 	margin:.2rem;
 	height: .88rem;
