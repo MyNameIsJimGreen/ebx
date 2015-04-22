@@ -100,10 +100,12 @@ $(function(){
        $totop.removeClass("show");
      },10000)
     })
-    
+   tap(".totop",function(){
+        myScroll.scrollTo(0, 0,1000,IScroll.utils.ease.elastic)
+   })
    tclick(".totop",function(){
         myScroll.scrollTo(0, 0,1000,IScroll.utils.ease.elastic)
-  })
+   })
    tclick(".city-list span",function(){
     localStorage.setItem("city",$(this).html());
     var locationStr = location.toString();
