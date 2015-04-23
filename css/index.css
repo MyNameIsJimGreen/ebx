@@ -83,14 +83,10 @@ nav img{
 .project a{ display: block; height: 100%;}
 .project>div{width:50%;}
 .project>div:first-child{border-right: solid 1px #e5e5e5;}
-.headico{float:left;margin:0.4rem 0.22rem 0rem 0.22rem;}
-.proFont{float:left;margin-top:0.65rem;line-height: 0.44rem;}
-.proFont p:first-child{font-size: 0.3rem;color:#2cca77;}
-.proFont p:last-child{font-size: 0.22rem;color: #aaa;}
-.bottombox{height: 1.4rem;margin-bottom:0.2rem;background:#fff;border-top: solid 1px #e5e5e5;border-bottom: solid 1px #e5e5e5;}
-.quick{width: 0.38rem;height: 0.38rem;background: url(/wap/images/quick.png) no-repeat;position: absolute;top: 0.18rem;right: 0.18rem; background-size: 100% 100%}
-
-.bottombox img{ width: 6.4rem; height: 1.4rem}
+.headico{float:left;margin:.4rem .22rem 0 .22rem;}
+.proFont{float:left;margin-top:.65rem;line-height: .44rem;}
+.proFont p:first-child{font-size: .3rem;color:#2cca77;}
+.proFont p:last-child{font-size: .22rem;color: #aaa;}
 .project>div:first-child .headico img{ width: 0.81rem; height: 0.65rem}
 .project>div:last-child .headico img{ width: 0.81rem; height: 0.65rem}
 
