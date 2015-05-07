@@ -102,18 +102,6 @@
 <script src="js/zepto.min.js"></script>
 <script src="js/swipe.min.js"></script>
 <script>
-/*iscroll的固定写法 end*/
-var myScroll;
-function loaded () {
-	myScroll = new IScroll('#wrapper', { 
-		bounceEasing: 'elastic',
-		bounceTime: 1200,
-	    fadeScrollbars:true,//是否渐隐滚动条，关掉可以加速
-		scrollbars:true});
-}
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-
 $(function(){
 	 var city = localStorage.getItem("city");
 	if(city && city!=="null"){
