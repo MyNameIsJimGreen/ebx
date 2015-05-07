@@ -459,7 +459,7 @@
                         sub = text.prev(),
                         navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on("click",function(){
+                    _this.on("touchstart",function(){
                         var curValue = text.text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
@@ -483,7 +483,7 @@
                         index = text.next()[0].dataset.index,
                         navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on("click",function(){
+                    _this.on("touchstart",function(){
                         var curValue = _this.next().text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
