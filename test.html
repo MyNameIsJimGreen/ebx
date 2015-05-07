@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+	<style>
+       
+       .container{
+       	  width: 111px;
+       	  height: 30px;
+       	  /*background: red;*/
+       }
+       .container div{
+       	 float: left;
+       }
+
+       .one{
+       	  height: 30px;
+       	  width: 30px;
+       	  background: url(images/add-sub.png) no-repeat;  
+       	  background-size: 108px 30px;
+       	  margin-right: 3px;
+          visibility: hidden;
+       }
+       .two{
+       	 height: 30px;
+       	 width: 45px;
+       	 text-align: center;
+       	 line-height: 30px;
+       	 color: #47C0E8;
+       	 font-size: 14px;
+       	 font-weight: bold;
+       	 background: url(images/add-sub.png) -32px 0;
+  		 background-size: 112px 30px;
+  		 margin-right: 3px;
+  		           visibility: hidden;
+
+       }
+       .three{
+       	    height: 30px;
+ 			width: 30px;
+  			background: url(images/add-sub.png) 31px 0;
+  			background-size: 108px 30px;
+
+       }
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="one"></div>
+		<div class="two">0</div>
+		<div class="three"></div>
+	</div>
+
+  <script>
+    var three = document.querySelector(".three");
+    var count = 0;
+    three.onclick = function(){
+    	count++;
+    	var one = document.querySelector(".one"),two = document.querySelector(".two"); 
+    	one.style.visibility = "visible";
+    	two.style.visibility = "visible";
+        two.innerHTML = count;
+        one.onclick = function() {
+        	count--;
+        	two.innerHTML = count;
+        	if(!count){
+        		count = 0;
+        		one.style.visibility = "hidden";
+    			two.style.visibility = "hidden";
+    			return;
+        	}
+        }
+    }
+  </script>
+
+
+
+  
+                <div class="order-detail">
+                    <div></div>
+                    <ul>
+                        <li>
+                            <div>布面网面旅游鞋清洗</div>
+                            <div>￥40</div>
+                            <div>4件</div>
+                        </li>
+                        <li>
+                            <div>被子毛毯</div>
+                            <div>￥79</div>
+                            <div>1件</div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div>运费</div>
+                            <div>￥0</div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div>合计</div>
+                            <div>￥89</div>
+                            <div>5件</div>
+                        </li>
+                    </ul>
+
+                </div>
+</body>
+</html>
