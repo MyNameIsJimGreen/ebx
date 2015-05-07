@@ -79,12 +79,12 @@ nav img{
 
 
 /*新首页样式*/
-.project{height:2.1rem;background: #fff;border-bottom: solid 1px #e5e5e5;}
+.project{height:1.5rem;background: #fff;border-bottom: solid 1px #e5e5e5;}
 .project a{ display: block; height: 100%;}
 .project>div{width:50%;}
 .project>div:first-child{border-right: solid 1px #e5e5e5;}
-.headico{float:left;margin:.4rem .22rem 0 .22rem;}
-.proFont{float:left;margin-top:.65rem;line-height: .44rem;}
+.headico{float:left;margin:.1rem .22rem 0 .22rem;}
+.proFont{float:left;margin-top:.35rem;line-height: .44rem;}
 .proFont p:first-child{font-size: .3rem;color:#2cca77;}
 .proFont p:last-child{font-size: .22rem;color: #aaa;}
 .project>div:first-child .headico img{ width: 0.81rem; height: 0.65rem}
@@ -93,9 +93,9 @@ nav img{
 @media screen and (max-width:420px){
 	.tips{
 		display: block;
-		height: 3rem;
+		height: 4rem;
 		color: #eee;
-		line-height: 3rem;
+		line-height: 2.2rem;
 		text-align: center;
 		font-size:0.5rem;
    }
