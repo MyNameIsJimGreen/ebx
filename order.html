@@ -255,7 +255,8 @@ $(function () {
             localdata.setItem("fdata_remark",order_remark);
 			return true;
 		});
-
+      var Hcont = $(".H-cont"),data = JSON.parse(localStorage.getItem("data"));
+      Hcont.html("共"+data.clickCount+"件，合计"+data.allTotal+"元");
 	});
 </script>
 <script>

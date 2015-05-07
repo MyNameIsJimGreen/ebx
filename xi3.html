@@ -417,8 +417,42 @@
                     hash = hash.substring(1,hash.length),
                     header = $("#header"),
                     eventType = "touchstart",
+                    navA = $('a[href="order.html"]'),
+                    navSpan = navA.find("span"),
+                    data = JSON.parse(localStorage.getItem("data")),
+                    i = len = 0,
+                    orderList = order = addClass =null,
                     TYPE_G = 0,TYPE_W = 1,TYPE_F = 2,TYPE_M = 3;//光面0，网面1，翻毛2，磨砂3
-
+               
+               //在进入选择页面之后，首先访问本地存储，看看有没有值，若有值
+               //就把值取出来，赋值到 tab、footer、text上
+               if(data){
+                  if(data.clickCount){
+                    navSpan.addClass("tips");
+                    navSpan.html(data.clickCount);
+                  }
+                  orderList = data.orderList;
+                  for(len = orderList.length;i<len;i++){
+                     order = orderList[i];
+                     addClass = $(navLi[order.type]).find("span");
+                     if(order.count){
+                        addClass.addClass("tips");
+                        addClass.html(order.count);
+                        var lu = $(listUl[order.type]);
+                        lu.find(".sub")[0].style.visibility="visible";
+                        lu.find(".text")[0].style.visibility="visible";
+                        lu.find(".text")[0].innerHTML=order.count;
+                     }
+                  }
+               }
+               //若没有任何订单则footer中的去往订单导航不可用
+               navA.on(eventType,function(){
+                  data = JSON.parse(localStorage.getItem("data"));//获取新的data，不然得刷新一下
+                  if(!data.clickCount){
+                    alert('您还没有任何订单');
+                    return false;
+                  }
+               })
                /**
                *
                *是否刷新？默认为false
@@ -426,13 +460,13 @@
                */         
                function tab(hash,isRefresh){
                     isRefresh = isRefresh || false;
-                    hash = hash || TYPE_G;
+                    hash = +hash || TYPE_G;
                     navLi.find("div").removeClass("selct");
                     $(navLi[hash]).find("div").addClass("selct");
                     listUl.css("display","none");
                     listUl[hash].style.display="block";
                     var html = "<div class='city'><a target='_self' href='index.html'><h6>< 返回</h6></a></div>";
-                    switch(+hash){
+                    switch(hash){
                         case TYPE_W:header.html(html+"网面");break;
                         case TYPE_F:header.html(html+"翻毛");break;
                         case TYPE_M:header.html(html+"磨砂");break;
@@ -458,7 +492,6 @@
                         text = _this.prev(),
                         index = this.dataset.index,
                         sub = text.prev(),
-                        navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
                     _this.on(eventType,function(){
                         var curValue = text.text(),
@@ -474,6 +507,8 @@
                         navSpan.addClass("tips");
                         navLiSpan.html(count);
                         navSpan.html(clickCount);
+                        // log("index:"+index+" count:"+count+" curValue:"+curValue+" clickCount:"+clickCount);
+                        save(index,count);
                     })
                 })
                 //交互3：点击 - 号，改变dom
@@ -482,7 +517,6 @@
                         _this = $(this),
                         text = _this.next(),
                         index = text.next()[0].dataset.index,
-                        navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
                     _this.on(eventType,function(){
                         var curValue = _this.next().text(),
@@ -511,50 +545,105 @@
                            navSpan.addClass("tips"); 
                         }
                         navSpan.html(clickCount);
+                        save(index,count);
                     })
                 })
             //本地订单存储
             // 在分类二级页面中，类型不同、数量不同的订单
 
-            /**
-            *
-            * 存入本地存储中的数据格式为：
-            *  
-            * {
-                total:220,//所有类型的总价格
-                count:14, //所有类型的鞋子总数
-                orderList://一种鞋子的集合既是一个order，此为order的集合
-                [
-                  {
-                    type:TYPE_G,   //鞋子属于那种类型 0为光面、1为网面、2为翻毛、3位磨砂
-                    count:20, //该类型的个数，20双光面鞋子
-                    total:300 //此order多少钱？ 20双光面鞋子 X 单价 ---> 20 x 15 = 300
-                  },
-                  {
-                    type:2
-                    count:2,
-                    total:40
+
+/**
+*
+* 存入本地存储中的数据格式为：
+*  
+* {
+    total:220,     //所有类型的总价格
+    clickCount:14, //所有类型的鞋子总数，即footer中的圆圈数
+    orderList:     //一种鞋子的集合既是一个order，此为order的集合
+    [
+      {
+        type:TYPE_G, //鞋子属于那种类型 0为光面、1为网面、2为翻毛、3位磨砂
+        count:20, //该类型的个数，20双光面鞋子
+        total:300 //此order多少钱？ 20双光面鞋子 X 单价 ---> 20 x 15 = 300
+      },
+      {
+        type:2
+        count:2,
+        total:40
+      }
+    ]
+  }
+*
+  要更新的是：点击 + 号、- 号 要实时更新本地存储
+  index:type,count:tab,curValue:currentValue,clickCount:footer  
+*/
+function save (type,count) {
+   type = +type || 0;
+   count = +count || 0;
+   var 
+     data = JSON.parse(localStorage.getItem("data")),
+     total = allTotal = clickCount = i = len = val = 0,
+     orderList = order = newOrder = null,
+     isInOrderList = false,
+     getVal = function(type){//根据不同的类型返回不同的单价
+       switch(type){
+        case 0 :return 10;
+        case 1 :return 15;
+        case 2 :return 20;
+        case 3 :return 25;}
+     },
+     getTotal = function(type,count){ //根据不同类型的鞋子数x单价 得出同类鞋子集合的总价
+       val = getVal(type);
+       switch(type){
+        case 0 :return count*val;
+        case 1 :return count*val;
+        case 2 :return count*val;
+        case 3 :return count*val;}
+     };
+   if(data){
+     orderList = data.orderList; //不同类型鞋子的集合
+     for(len = orderList.length;i<len;i++){ //循环结合
+       order = orderList[i];
+       if(order.type === type){ // 若本次要存储的存在于本地存储，则更新订单中的count、total
+          order.count = count;
+          order.total = getTotal(type,count);
+          isInOrderList = true;
+       }
+     }
+     if(!isInOrderList){//若本次要存储的不存在，则push新订单
+       newOrder = {
+                    "type":type,
+                    "count":count,
+                    "total":getTotal(type,count)
                   }
-                ]
+       orderList.push(newOrder);
+     }
+     //循环最新的orderList,计算出总价与总数并更新到对象上
+    for(i = 0,len = orderList.length;i<len;i++){
+      order = orderList[i];
+      allTotal += order.total;
+      clickCount += order.count;
+    }
+    data.allTotal = allTotal;
+    data.clickCount = clickCount;
+   }else{ //若没有本地存储
+     total = allTotal = getTotal(type,count); //因为是第一次存储，所以总价等于集合价
+     data = 
+          {
+            "allTotal":allTotal,
+            "clickCount":clickCount,
+            "orderList":
+            [
+              {
+                "type":type,
+                "count":count,
+                "total":total
               }
-            *
-            */
-            function Order (type,count) {
-                this.type = type;
-                this.count = count;
-                switch(this.type){
-                    case 1:
-                      this.total = count*15;
-                      break;
-                    case 2:
-                      this.total = count*20;
-                    case 3:
-                      this.total = count*25;
-                    case 4:
-                      this.total = count*30;
-                }
-            }
-        var order = new Order(1,20);
+            ]
+          };
+   }
+   localStorage.setItem("data",JSON.stringify(data)); //更新本地存储
+}
  })
     </script>
 </body>
