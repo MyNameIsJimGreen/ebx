@@ -91,7 +91,7 @@ nav img{
 .project>div:last-child .headico img{ width: 0.81rem; height: 0.65rem}
 
 @media screen and (max-width:420px){
-	.tips{
+	.more{
 		display: block;
 		height: 4rem;
 		color: #eee;
@@ -100,4 +100,22 @@ nav img{
 		font-size:0.5rem;
    }
   
+}
+.tips{
+	background: red;
+	display: inline-block !important;
+	width: 19px;
+	height: 19px;
+	text-align: center;
+	line-height: 19px;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 12px;
+	font-family: "Helvetica","微软雅黑","宋体";
+	position: absolute;
+	top: 4px;
+	right: 20%;
+}
+a[href="order.html"]{
+	position: relative;
 }
