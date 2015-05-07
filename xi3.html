@@ -416,6 +416,7 @@
                     listUl = $(".list ul"),
                     hash = hash.substring(1,hash.length),
                     header = $("#header"),
+                    eventType = "touchstart",
                     TYPE_G = 0,TYPE_W = 1,TYPE_F = 2,TYPE_M = 3;//光面0，网面1，翻毛2，磨砂3
 
                /**
@@ -440,7 +441,7 @@
                     isRefresh && myScroll.refresh();
                }
                tab(hash);
-               navLi.on("click",function(e){
+               navLi.on(eventType,function(e){
                     var target = e.target;
                     if(target === this){
                         hash = target.dataset.index; 
@@ -459,7 +460,7 @@
                         sub = text.prev(),
                         navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on("touchstart",function(){
+                    _this.on(eventType,function(){
                         var curValue = text.text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
@@ -483,7 +484,7 @@
                         index = text.next()[0].dataset.index,
                         navSpan = $('a[href="order.html"] span'),
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on("touchstart",function(){
+                    _this.on(eventType,function(){
                         var curValue = _this.next().text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
