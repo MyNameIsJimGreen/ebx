@@ -111,7 +111,6 @@
         c.push(w);
         o.push(c);
         return {wheels: o,parseValue: function(I, D) {
-                console.info("parseValue:" + I);
                 var B = new RegExp(/[0-9]{4}-[0-9]{2}-[0-9]{2}[" "]{1}[0-9]{2}[:]{1}[0-9]{2}/);
                 if (I == null || I == "" || !B.test(I)) {
                     var H = new Date();
@@ -143,7 +142,6 @@
                     F = F <= 9 ? "0" + F : F;
                     C = C <= 9 ? "0" + C : C;
                     I = G + "-" + z + "-" + F + " " + C + ":00";
-                    console.info("defaultValue:" + I)
                 }
                 var h = I.split(" "), E = [], A = 0, J;
                 a.each(D.settings.wheels, function(i, d) {
@@ -255,8 +253,11 @@ $(function () {
             localdata.setItem("fdata_remark",order_remark);
 			return true;
 		});
-      var Hcont = $(".H-cont"),data = JSON.parse(localStorage.getItem("data"));
-      Hcont.html("共"+data.clickCount+"件，合计"+data.allTotal+"元");
+      var Hcont = $(".H-cont"),
+          data = JSON.parse(localStorage.getItem("data"));
+          if(data){
+              Hcont.html("共"+data.clickCount+"件，合计"+data.allTotal+"元");
+          }
 	});
 </script>
 <script>
