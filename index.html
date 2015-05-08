@@ -144,7 +144,7 @@ $(function(){
              navA = $('a[href="order.html"]'),
              navSpan = navA.find("span");
   navA.on("touchstart",function(){
-    if(!data.clickCount){
+    if(data&&!data.clickCount){
       alert('您还没有任何订单');
       return false;
     }
