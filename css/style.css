@@ -45,8 +45,8 @@ input[type="button"], input[type="submit"], input[type="reset"] { -webkit-appear
 .px34{ font-size:0.34rem;}
 .px36{ font-size:0.36rem;}
 /*wrap*/
-.bg{background: #6633CC;}
-.color{color: #6633CC;}
+.bg{background: #66d4ef;}
+.color{color: #66d4ef;}
 .wrap{min-width:320px; max-width:640px; margin:0px auto;overflow:hidden;}
 /*flexbox*/
 .flexbox{display: -webkit-box; display: -moz-box; display: box; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; box-orient: horizontal; -webkit-box-pack: end; -moz-box-pack: end; box-pack: end; }
