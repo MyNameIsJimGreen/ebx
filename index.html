@@ -109,7 +109,6 @@ $(function(){
 	}else{
 		 $(".city").find("span").html('北京');
 	}
-
 	 /*swipe的固定写法 start*/
 	//滑动函数
 	function set_imgsize(){
@@ -142,7 +141,8 @@ $(function(){
   var data = JSON.parse(localStorage.getItem("data")),
              navA = $('a[href="order.html"]'),
              navSpan = navA.find("span");
-  navA.on("touchstart",function(){
+  navA.on("click",function(){
+    alert(JSON.stringify(data));
     if(data&&!data.clickCount){
       alert('您还没有任何订单');
       return false;
@@ -155,7 +155,6 @@ $(function(){
     }
 }
 })
-
 var _hmt = _hmt || [];
 (function() {
 var hm = document.createElement("script");
