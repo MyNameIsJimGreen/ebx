@@ -3,14 +3,6 @@
       color: #313131;
       font-family: "微软雅黑";
 }
-.city{
-    position:absolute;
-    left: 10px;
-    cursor: pointer;
-}
-.city a {
-    color: #fff;
-}
 .H-intro{
 	height: .7rem;
 	text-align: center;

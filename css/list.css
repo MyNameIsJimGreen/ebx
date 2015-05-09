@@ -1,12 +1,4 @@
 @charset "utf-8";
-.city{
-    position:absolute;
-    left: 10px;
-    cursor: pointer;
-}
-.city a {
-    color: #fff;
-}
 footer {
 	position: absolute;
 	z-index: 2;

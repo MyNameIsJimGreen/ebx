@@ -1,11 +1,6 @@
 @charset "utf-8";
 
 header a{ color:#fff;}
-.city{
-	position:absolute;
-	left: 10px;
-	cursor: pointer;
-}
 .down{
 	height: 6px;
 	width: 12px;
