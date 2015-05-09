@@ -447,13 +447,20 @@
                   }
                }
                //若没有任何订单则footer中的去往订单导航不可用
-               navA.on(eventType,function(){
+               navA.on('click',function(){
                   data = JSON.parse(localStorage.getItem("data"));//获取新的data，不然得刷新一下
                   if(data&&!data.clickCount){
                     alert('您还没有任何订单');
                     return false;
                   }
-               })
+               });
+               navA.on('touchstart',function(){
+                  data = JSON.parse(localStorage.getItem("data"));//获取新的data，不然得刷新一下
+                  if(data&&!data.clickCount){
+                    alert('您还没有任何订单');
+                    return false;
+                  }
+               });
                /**
                *
                *是否刷新？默认为false
@@ -476,7 +483,7 @@
                     isRefresh && myScroll.refresh();
                }
                tab(hash);
-               navLi.on(eventType,function(e){
+               navLi.on('click',function(e){
                     var target = e.target;
                     if(target === this){
                         hash = target.dataset.index; 
@@ -484,7 +491,16 @@
                         hash = e.target.parentNode.dataset.index;
                     }
                     tab(hash,true);
-               })
+               });
+               navLi.on('touchstart',function(e){
+                    var target = e.target;
+                    if(target === this){
+                        hash = target.dataset.index; 
+                    }else{
+                        hash = e.target.parentNode.dataset.index;
+                    }
+                    tab(hash,true);
+               });
 
                //交互2：点击 + 号，改变dom
                 listUl.find(".add").each(function() {
@@ -494,7 +510,7 @@
                         index = this.dataset.index,
                         sub = text.prev(),
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on(eventType,function(){
+                    _this.on('click',function(){
                         var curValue = text.text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
@@ -510,7 +526,24 @@
                         navSpan.html(clickCount);
                         // log("index:"+index+" count:"+count+" curValue:"+curValue+" clickCount:"+clickCount);
                         save(index,count);
-                    })
+                    });
+                    _this.on('touchstart',function(){
+                        var curValue = text.text(),
+                            clickCount = $('a[href="order.html"] span').text(),
+                            count = navLiSpan.text();
+                        clickCount++;
+                        curValue++;
+                        count++;
+                        text.css("visibility","visible");
+                        sub.css("visibility","visible");
+                        text.html(curValue);
+                        navLiSpan.addClass("tips");
+                        navSpan.addClass("tips");
+                        navLiSpan.html(count);
+                        navSpan.html(clickCount);
+                        // log("index:"+index+" count:"+count+" curValue:"+curValue+" clickCount:"+clickCount);
+                        save(index,count);
+                    });
                 })
                 //交互3：点击 - 号，改变dom
                 listUl.find(".sub").each(function() {
@@ -519,7 +552,7 @@
                         text = _this.next(),
                         index = text.next()[0].dataset.index,
                         navLiSpan = $($(".nav li span")[index]);
-                    _this.on(eventType,function(){
+                    _this.on('click',function(){
                         var curValue = _this.next().text(),
                             clickCount = $('a[href="order.html"] span').text(),
                             count = navLiSpan.text();
@@ -547,7 +580,36 @@
                         }
                         navSpan.html(clickCount);
                         save(index,count);
-                    })
+                    });
+                    _this.on('touchstart',function(){
+                        var curValue = _this.next().text(),
+                            clickCount = $('a[href="order.html"] span').text(),
+                            count = navLiSpan.text();
+                        curValue--;
+                        count--;
+                        clickCount--;
+                        if(!curValue){
+                            text.css("visibility","hidden");
+                            _this.css("visibility","hidden");
+                        }else{
+                            text.css("visibility","visible");
+                            _this.css("visibility","visible");
+                        }
+                        text.html(curValue);
+                        if(!count){
+                           navLiSpan.removeClass("tips");
+                        }else{
+                           navLiSpan.addClass("tips");
+                        }
+                        navLiSpan.html(count);
+                        if(!clickCount){
+                           navSpan.removeClass("tips");
+                        }else{
+                           navSpan.addClass("tips"); 
+                        }
+                        navSpan.html(clickCount);
+                        save(index,count);
+                    });
                 })
             //本地订单存储
             // 在分类二级页面中，类型不同、数量不同的订单
