@@ -83,7 +83,7 @@
 </div>
 <footer id="footer"  class="bg">
 	<nav>
-	       <a target="_self" href="index.html" onclick="return false;">
+	       <a target="_self" href="index.html" onclick="return false;" ontouchstart="return false;">
              <img width="38" height="38" src="images/shouye_1.png"/>
             </a>
 	       <a target="_self" href="order.html">
@@ -141,19 +141,26 @@ $(function(){
   var data = JSON.parse(localStorage.getItem("data")),
              navA = $('a[href="order.html"]'),
              navSpan = navA.find("span");
+  navA.on("touchstart",function(){
+    alert(JSON.stringify(data));
+    if(data&&!data.clickCount){
+      alert('您还没有任何订单');
+      return false;
+    }
+ });
   navA.on("click",function(){
     alert(JSON.stringify(data));
     if(data&&!data.clickCount){
       alert('您还没有任何订单');
       return false;
     }
- })
+ });
   if(data){
     if(data.clickCount){
       navSpan.addClass("tips");
       navSpan.html(data.clickCount);
     }
-}
+  }
 })
 var _hmt = _hmt || [];
 (function() {

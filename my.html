@@ -62,7 +62,7 @@
 	   	     <img width="38" height="38" src="images/luntan.png"/>
            <span style="display:none;">0</span>
 	       </a>
-	       <a target="_self" href="my.html" onclick="return false;">
+	       <a target="_self" href="my.html" onclick="return false;" ontouchstart="return false;">
 	  		 <img width="38" height="38" src="images/wode_1.png"/>
 	       </a>
 	       <a target="_self" href="index.html">
@@ -78,6 +78,12 @@ $(function(){
              navA = $('a[href="order.html"]'),
              navSpan = navA.find("span");
   navA.on("click",function(){
+    if(data&&!data.clickCount){
+      alert('您还没有任何订单');
+      return false;
+    }
+ })
+  navA.on("touchstart",function(){
     if(data&&!data.clickCount){
       alert('您还没有任何订单');
       return false;

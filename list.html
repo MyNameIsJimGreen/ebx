@@ -412,8 +412,6 @@
                     listUl = $(".list ul"),
                     hash = hash.substring(1,hash.length),
                     header = $("#header"),
-                    eventType = "click",
-                    // eventType = "touchstart",
                     navA = $('a[href="order.html"]'),
                     navSpan = navA.find("span"),
                     data = JSON.parse(localStorage.getItem("data")),
@@ -443,13 +441,20 @@
                   }
                }
                //若没有任何订单则footer中的去往订单导航不可用
-               navA.on(eventType,function(){
+               navA.on('click',function(){
                   data = JSON.parse(localStorage.getItem("data"));//获取新的data，不然得刷新一下
                   if(data&&!data.clickCount){
                     alert('您还没有任何订单');
                     return false;
                   }
-               })
+               });
+               navA.on('touchstart',function(){
+                  data = JSON.parse(localStorage.getItem("data"));//获取新的data，不然得刷新一下
+                  if(data&&!data.clickCount){
+                    alert('您还没有任何订单');
+                    return false;
+                  }
+               });
                /**
                *
                *是否刷新？默认为false

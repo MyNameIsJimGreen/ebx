@@ -58,6 +58,10 @@ $(function(){
     $('.reserBtn').on("click",function(){
        localStorage.setItem("data",'{"allTotal":0,"clickCount":0,"orderList":[{"type":0,"count":0,"total":0}]}');
        location.href = "xi3.html";
+    });
+    $('.reserBtn').on("touchstart",function(){
+       localStorage.setItem("data",'{"allTotal":0,"clickCount":0,"orderList":[{"type":0,"count":0,"total":0}]}');
+       location.href = "xi3.html";
     })
 })
 var _hmt = _hmt || [];
