@@ -154,6 +154,32 @@ function save (type,count) {
    localStorage.setItem("data",JSON.stringify(data)); //更新本地存储
 }
 save(1,10);
+
+
+
+
+var startX = 0;
+               document.addEventListener('touchstart',function(e){
+                   e.preventDefault();
+                   var touch = e.touches[0];
+                   startX = touch.clientX;
+                   console.log("startX:"+startX);
+                   console.log(hash);
+               },false);
+               document.addEventListener('touchmove',function(e){
+                   var touch = e.touches[0];
+                   var xSub = touch.clientX - startX;
+
+                   if(xSub > 20){
+                      // tab(3);
+                      hash++;
+                      tab(hash);
+                   }
+                   if(xSub < -20){
+                      hash--;
+                      tab(hash);
+                   }
+               },false);
 </script>
 </body>
 </html>
