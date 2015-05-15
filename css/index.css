@@ -15,7 +15,6 @@ nav svg{padding:12px 0;}
 #position li{width:0.2rem;height:4px;display:inline-block;background-color:#fff; background-clip:padding-box; list-style:none outside none; line-height:0; vertical-align:middle; margin:0 0.12rem;opacity: 0.5;}
 #position li.cur{ background-color:#fff;opacity: 1;}
 
-
 /*新首页样式*/
 .project{height:1.5rem;background: #fff;border-bottom: solid 1px #e5e5e5;}
 .project a{ display: block; height: 100%;}
