@@ -1,13 +1,7 @@
 @charset "utf-8";
 
 header a{ color:#fff;}
-.down{
-	height: 6px;
-	width: 12px;
-	margin-left: 5px;
-	display: inline-block;
-	background: url("../images/down.png") center no-repeat;
-}
+.down{height: 6px;width: 12px;margin-left: 5px;display: inline-block;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAMAAADAMI+zAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAQlBMVEX/////UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD/UAD///9It+BMAAAAFHRSTlMA5+OrpwOTjmz8+2hJ8vBGLdbSK35PS8AAAAABYktHRACIBR1IAAAAMklEQVQI12NgFIEDJgZmBIeFgZUNxmZnZWBg4OAEMbm4GcCAh1dEhI+fAQoEBIWEQTQAoJUDbNS7QAEAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDEtMjZUMTY6MTE6MzcrMDg6MDD8hUqjAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAxLTI2VDE2OjExOjM3KzA4OjAwjdjyHwAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=") center no-repeat;}
 /*城市选择区*/
 .city-item{
    margin-top: 10px;
