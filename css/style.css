@@ -9,21 +9,8 @@ address,em{font-style: normal;}
 a {	color:#333;	text-decoration:none; outline:none}
 img {vertical-align: middle;}
 *{-webkit-tap-highlight-color:rgba(0,0,0,0);}
-.clearfix:after {
-	/*元素不可见*/
-    visibility: hidden;
-    /*块元素*/
-    display: block;
-    /*防止继承父元素的font-size，导致有大小*/
-    font-size: 0;
-    /*元素的innerHTML*/
-    content: " ";
-    /*清除浮动*/
-    clear: both;
-    /*保险起见，把height设置成0*/
-    height: 0;
-}
-input[type="button"], input[type="submit"], input[type="reset"] { -webkit-appearance: none;}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;} 
+input[type="button"],input[type="submit"],input[type="reset"]{-webkit-appearance:none;}
 @media screen and (max-width:640px){html,button,input,select,table,textarea{font-size:100px}}
 @media screen and (max-width:580px){html,button,input,select,table,textarea{font-size:90px;}}
 @media screen and (max-width:540px){html,button,input,select,table,textarea{font-size:84px;}}
@@ -55,3 +42,4 @@ header {min-width:320px; max-width:640px;position: absolute;z-index: 2;top: 0;wi
 #wrapper {min-width:320px; max-width:640px; position: absolute; z-index: 1; top: 45px; bottom: 45px; width: 100%; background: white; overflow: hidden; }
 .city{position:absolute;left: 10px;cursor: pointer;}
 .city a {color: #fff;}
+.newbg{background:#f8f8f8;}
