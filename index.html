@@ -16,20 +16,17 @@
 <link rel=apple-touch-icon sizes="72x72" href=images/logo_50_50png.png>
 <link rel=stylesheet href=css/style.css>
 <link rel=stylesheet href=css/index.css>
-</head>
-<body>
-<div class="wrap">
+</head><body><div class="wrap">
 <header id="header" class="bg" style="position:relative;"><div class="city"><a target="_self" href="city.html"><h5><span></span><i class="down"></i></h5></a></div>e帮鞋</header>
 <div id="wrapper">
 	<div id="scroller">
 	   <div class="banner">
          <div class="swipe" id="slider" style="visibility:visible;">
           <div id="banners" class="swipe-wrap">
-          <a><img width="640" height="274" src="images/1.jpg" alt="1"></a>
-         	<a><img width="640" height="274" src="images/2.jpg" alt="2"></a>
-         	<a><img width="640" height="274" src="images/3.jpg" alt="3"></a>
-          </div>
-          <ul id="position"><li></li><li></li><li></li></ul>
+          <a><img width=640 height=274 src=images/1.jpg alt=1></a>
+         	<a><img width=640 height=274 src=images/2.jpg alt=2></a>
+         	<a><img width=640 height=274 src=images/3.jpg alt=3></a>
+          </div><ul id="position"><li></li><li></li><li></li></ul>
          </div>
 	  </div>
 	    <div class="project flexbox">
@@ -37,48 +34,42 @@
             <a href="list.html#0">
             <div class="headico"> <img height="41" width="33" src="images/gw2.png" alt="光面|网面"></div>
             <div class="proFont">
-                            <p>光面|网面</p>
-                            <p>15元精洗护理</p>
+              <p>光面|网面</p>
+              <p>15元精洗护理</p>
             </div>
             </a>
         </div>
-
           <div>
             <a href="list.html#1">
             <div class="headico"> <img height="41" width="33"  src="images/fm2.png" alt="翻毛|磨砂"></div>
             <div class="proFont">
-                        <p style="color:#52c4ff">翻毛|磨砂</p>
-                        <p>15元精洗护理</p>
+              <p style="color:#52c4ff">翻毛|磨砂</p>
+              <p>15元精洗护理</p>
             </div>
             </a>
         </div>
     </div>
-
     <div class="project flexbox">
         <div>
             <a href="list.html#2">
             <div class="headico"> <img height="41" width="33"  src="images/xiu2.png" alt="修鞋"></div>
             <div class="proFont">
-                            <p>修鞋</p>
-                            <p>10元精心维修</p>
+              <p>修鞋</p>
+              <p>10元精心维修</p>
             </div>
             </a>
         </div>
-
           <div>
             <a href="list.html#3">
             <div class="headico"> <img height="41" width="33"  src="images/fan2.png" alt="翻新"></div>
             <div class="proFont">
-                        <p style="color:#52c4ff">翻新</p>
-                        <p>20元全面翻新</p>
+              <p style="color:#52c4ff">翻新</p>
+              <p>20元全面翻新</p>
             </div>
             </a>
         </div>
     </div>
-
-        <div class="hide more">
-          亲！更多内容，敬请期待
-        </div>
+        <div class="hide more">亲！更多内容，敬请期待</div>
 	</div>
 </div>
 <footer id="footer"  class="bg">
@@ -89,8 +80,7 @@
 	  </nav>
 </footer>
 </div>
-<script src="js/zepto.min.js"></script>
-<script src="js/swipe.min.js" defer></script>
+<script src="js/zepto.min.js"></script><script src="js/swipe.min.js" defer></script>
 <script>
 $(function(){
 	 var city = localStorage.getItem("city");
@@ -99,8 +89,6 @@ $(function(){
 	}else{
 		 $(".city").find("span").html('北京');
 	}
-	 /*swipe的固定写法 start*/
-	//滑动函数
 	function set_imgsize(){
 		var bullets = $("#position li");
 		new Swipe(document.getElementById('slider'), {
@@ -121,13 +109,10 @@ $(function(){
 	   var 
 	       width = $("body").width(),
 	       orientationEvent = "onorientationchange" in window ? "orientationchange": "resize";
-	//先调用一次滑动函数让他运动起来
 	set_imgsize();
-	//根据滑动方向调用滑动函数
 	window.addEventListener(orientationEvent, function() {
 		set_imgsize();
 	}, false);
-	/*swipe的固定写法 end*/
   var data = JSON.parse(localStorage.getItem("data")),
              navA = $('a[href="order.html"]'),
              navSpan = navA.find("span");
@@ -149,14 +134,6 @@ $(function(){
       navSpan.html(data.clickCount);
     }
   }
-})
-var _hmt = _hmt || [];
-(function() {
-var hm = document.createElement("script");
-hm.src = "//hm.baidu.com/hm.js?c47a84206681693e534ee69cbd180f19";
-var s = document.getElementsByTagName("script")[0]; 
-s.parentNode.insertBefore(hm, s);
-})();
-</script>
-</body>
-</html>
+});
+var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?c47a84206681693e534ee69cbd180f19";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();
+</script></body></html>
