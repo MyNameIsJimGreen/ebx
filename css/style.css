@@ -40,3 +40,4 @@ header{min-width:320px; max-width:640px;position:absolute;z-index:2;top:0;width:
 .city{position:absolute;left:10px;cursor:pointer;}
 .city a{color:#fff;}
 .footerbg{background:#f8f8f8;}
+header h6{font-size:16px;}
