@@ -21,5 +21,5 @@ nav a{float:left;font-size:0.6rem;width:33%;text-align:center;line-height:38px;}
 .proFont p:last-child{font-size:.22rem;color:#aaa;}
 .project>div:first-child .headico img,.project>div:last-child .headico img{width:0.81rem;height:0.65rem}
 @media screen and (max-width:420px){.more{display:block;height:4rem;color:#eee;line-height:2.2rem;text-align:center;font-size:0.5rem;}}
-.tips{background:red;display:inline-block !important;width:19px;height:19px;text-align:center;line-height:19px;border-radius:50%;color: #fff;font-size:12px;font-family:"Helvetica","微软雅黑","宋体";position:absolute;top:4px; right: 20%; } a[href="order.html"]{position: relative;}
+.tips{background:#fb0a53;display:inline-block !important;width:19px;height:19px;text-align:center;line-height:19px;border-radius:50%;color: #fff;font-size:12px;font-family:"Helvetica","微软雅黑","宋体";position:absolute;top:4px; right: 20%; } a[href="order.html"]{position: relative;}
 .red{color:#fb0a53;}
