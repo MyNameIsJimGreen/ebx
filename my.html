@@ -103,31 +103,32 @@ if(userName === null){
 }
 
 $(".my-title").click(function(){
-
    //test
-   // var msg = '{"code":1000,"data":[{"orderTime":"2015-06-19","productPrice":200,"productDesc":"Ax1,Bx2,Cx3","status":100},{"orderTime":"2015-06-19","productPrice":200,"productDesc":"Ax1,Bx2,Cx3","status":120}]}'
-   // // var order = JSON.parse(msg);
-   // localStorage.setItem("queryOrder",msg);
-   // window.location = "file:///E:/GitHub/ebangxie-page/myorder.html";
+   var msg = '{"code":1000,"data":[{"orderTime":"2015-06-19","productPrice":200,"productDesc":"Ax1,Bx2,Cx3","status":100},{"orderTime":"2015-06-19","productPrice":200,"productDesc":"Ax1,Bx2,Cx3","status":120}]}'
+   // var order = JSON.parse(msg);
+   localStorage.setItem("queryOrder",msg);
+   var local = window.location.toString();
+   var loll = local.substring(0,local.lastIndexOf("/")+1)
+   window.location = loll+"myorder.html";
    
-   $.ajax({
-            type:'post',
-            url:'http://123.57.220.173/admin/order/query',
-            data:{mobile:localStorage.getItem("number")},
-            dataType:'text',
-            success:function(msg){
-              var order = JSON.parse(msg);
-              if(+order.code === 1000){
-                 localStorage.setItem("queryOrder",msg);
-                 var local = window.location;
-                 var loll = local.substring(0,local.lastIndexOf("/")+1)
-                 window.location = loll+"myorder.html";
-              }
-            },
-            error:function(){
-                alert('访问错误')
-            }
-        })
+   // $.ajax({
+   //          type:'post',
+   //          url:'http://123.57.220.173/admin/order/query',
+   //          data:{mobile:localStorage.getItem("number")},
+   //          dataType:'text',
+   //          success:function(msg){
+   //            var order = JSON.parse(msg);
+   //            if(+order.code === 1000){
+   //               localStorage.setItem("queryOrder",msg);
+                 // var local = window.location;
+                 // var loll = local.substring(0,local.lastIndexOf("/")+1)
+                 // window.location = loll+"myorder.html";
+   //            }
+   //          },
+   //          error:function(){
+   //              alert('访问错误')
+   //          }
+   //      })
 })
 
 
