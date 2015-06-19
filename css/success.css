@@ -6,7 +6,7 @@
 	background:#fff;
 	display:-webkit-box;
 	-webkit-box-orient:vertical;
-	height:70%;
+	height:64%;
 	margin-bottom:10px;
 }
 .section{
@@ -62,7 +62,7 @@ display:-webkit-box;
 .hotline p:first-child{
 	margin-bottom:5px;
 	color:#343434;
-	height:25%;
+	height:30%;
 	padding-top:10px;
 }
 .hotline p:last-child{
