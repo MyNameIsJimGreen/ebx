@@ -68,4 +68,5 @@ display:-webkit-box;
 .hotline p:last-child{
 	margin-bottom:5px;
 	height:70%;
+	font-size:.38rem;
 }
