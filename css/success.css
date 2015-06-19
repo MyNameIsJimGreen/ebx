@@ -70,3 +70,6 @@ display:-webkit-box;
 	height:70%;
 	font-size:.38rem;
 }
+.hotline p:last-child a{
+	color:#ff9501;
+}
